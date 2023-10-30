@@ -56,8 +56,8 @@ pipelines:
       - type: org.osbuild.ignition
       - type: org.osbuild.ostree.deploy.container
         options:
-          osname: fedora-coreos
-          target_imgref: ostree-remote-registry:fedora:quay.io/fedora/fedora-coreos:stable
+          osname: silverblue-asahi
+          target_imgref: b7c8629a058d
           mounts:
             - /boot
             - /boot/efi
@@ -73,12 +73,12 @@ pipelines:
             origin: org.osbuild.source
             mpp-resolve-images:
               images:
-                - source: registry.gitlab.com/redhat/services/products/image-builder/ci/images/fedora-coreos
-                  tag: stable
+                - source: b7c8629a058d
+                  tag: 39
       - type: org.osbuild.ostree.selinux
         options:
           deployment:
-            osname: fedora-coreos
+            osname: silverblue-asahi
             ref: ostree/1/1/0
       - type: org.osbuild.grub2
         options:
@@ -89,7 +89,6 @@ pipelines:
           uefi:
             vendor: fedora
             install: true
-          legacy: i386-pc
           write_defaults: false
           greenboot: false
           ignition: true
@@ -137,7 +136,7 @@ pipelines:
         options:
           uuid: 96d15588-3596-4b3c-adca-a2ff7279ea63
           label: boot
-      - type: org.osbuild.mkfs.xfs
+      - type: org.osbuild.mkfs.ext4
         devices:
           device:
             type: org.osbuild.loopback
@@ -189,7 +188,7 @@ pipelines:
                 mpp-format-int: '{image.layout[''root''].size}'
         mounts:
           - name: root
-            type: org.osbuild.xfs
+            type: org.osbuild.ext4
             source: root
             target: /
           - name: boot
