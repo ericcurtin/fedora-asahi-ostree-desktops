@@ -4,9 +4,8 @@ RUN rpm-ostree install alsa-ucm-asahi asahi-bless asahi-fwupdate asahi-scripts a
 RUN if [ $(uname -m) = "aarch64" ]; then rpm-ostree install grub2-efi-aa64 grub2-efi-aa64-modules shim-aa64 uboot-images-armv8 xorg-x11-drv-armsoc update-m1n1; fi
 RUN rpm-ostree cliwrap install-to-root /
 # Replace the kernel, kernel-core and kernel-modules packages.
-#RUN rpm-ostree override replace kernel-16k kernel-16k-core kernel-16k-modules kernel-16k-modules-core kernel-16k-modules-extra
 RUN rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:group_asahi:kernel' kernel-16k kernel-16k-core kernel-16k-modules kernel-16k-modules-core kernel-16k-modules-extra
 RUN rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:group_asahi:mesa' $(rpm -qa --queryformat "%{NAME}\n" | grep "^mesa" | xargs)
-RUN rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:group_asahi:fedora-remix-branding' fedora-asahi-remix-release fedora-asahi-remix-release-common fedora-asahi-remix-release-identity-basic fedora-asahi-remix-release-workstation
+#RUN rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:group_asahi:fedora-remix-branding' fedora-asahi-remix-release fedora-asahi-remix-release-common fedora-asahi-remix-release-identity-basic fedora-asahi-remix-release-workstation
 RUN ostree container commit
 
