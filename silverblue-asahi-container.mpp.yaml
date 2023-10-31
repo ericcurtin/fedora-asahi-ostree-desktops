@@ -57,7 +57,7 @@ pipelines:
       - type: org.osbuild.ostree.deploy.container
         options:
           osname: silverblue-asahi
-          target_imgref: b7c8629a058d
+          target_imgref: silverblue-asahi
           mounts:
             - /boot
             - /boot/efi
@@ -73,7 +73,7 @@ pipelines:
             origin: org.osbuild.source
             mpp-resolve-images:
               images:
-                - source: b7c8629a058d
+                - source: silverblue-asahi
                   tag: 39
       - type: org.osbuild.ostree.selinux
         options:

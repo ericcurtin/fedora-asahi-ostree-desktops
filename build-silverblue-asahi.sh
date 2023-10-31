@@ -2,7 +2,7 @@
 
 set -ex
 
-sudo podman build .
+sudo podman build -t silverblue-asahi .
 
 mkdir -p _build
 mkdir -p _build/osbuild_store/{objects,refs,sources/org.osbuild.files,tmp}
