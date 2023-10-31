@@ -57,7 +57,7 @@ pipelines:
       - type: org.osbuild.ostree.deploy.container
         options:
           osname: silverblue-asahi
-          target_imgref: silverblue-asahi
+          target_imgref: ostree-remote-registry:ecurtin:quay.io/ecurtin/silverblue-asahi:39
           mounts:
             - /boot
             - /boot/efi
