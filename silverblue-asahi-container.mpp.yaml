@@ -73,8 +73,8 @@ pipelines:
             origin: org.osbuild.source
             mpp-resolve-images:
               images:
-                - source: silverblue-asahi
-                  tag: 39
+                - source: registry.gitlab.com/redhat/services/products/image-builder/ci/images/fedora-coreos
+                  tag: stable
       - type: org.osbuild.ostree.selinux
         options:
           deployment:
