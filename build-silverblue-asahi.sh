@@ -3,8 +3,8 @@
 set -ex
 
 sudo podman build -t silverblue-asahi:39 .
-sudo podman push silverblue-asahi quay.io/ecurtin/silverblue-asahi
-sudo podman push silverblue-asahi quay.io/ecurtin/silverblue-asahi:39
+# sudo podman push silverblue-asahi quay.io/ecurtin/silverblue-asahi
+# sudo podman push silverblue-asahi quay.io/ecurtin/silverblue-asahi:39
 
 mkdir -p _build
 mkdir -p _build/osbuild_store/{objects,refs,sources/org.osbuild.files,tmp}
