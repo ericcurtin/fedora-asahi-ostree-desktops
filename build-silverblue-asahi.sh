@@ -12,5 +12,7 @@ mkdir -p _build/image_output
 osbuild-mpp silverblue-asahi-container.mpp.yaml _build/silverblue-asahi-container.json
 # osbuild-mpp -I . -D image_type="ostree" -D arch="aarch64" -D distro_name="silverblue-asahi" -D target="asahi" silverblue-asahi-container.mpp.yaml _build/silverblue-asahi-container.aarch64.json
 osbuild-mpp -I . silverblue-asahi-container.mpp.yaml _build/silverblue-asahi-container.aarch64.json
+sudo mkdir -p /var/osbuild/store/
+python3 -m osbuild --libdir .  --store /var/osbuild/store/ --output-directory out/ --checkpoint image-tree --checkpoint image --cache-max-size 20GiB --export qcow2 _build/silverblue-asahi-container.aarch64.json
 
 
