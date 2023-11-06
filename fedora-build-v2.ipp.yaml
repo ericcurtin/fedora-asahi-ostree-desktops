@@ -23,7 +23,4 @@ pipelines:
       - type: org.osbuild.selinux
         options:
           file_contexts: etc/selinux/targeted/contexts/files/file_contexts
-          labels:
-            /usr/bin/cp: system_u:object_r:install_exec_t:s0
-            /usr/bin/tar: system_u:object_r:install_exec_t:s0
 
