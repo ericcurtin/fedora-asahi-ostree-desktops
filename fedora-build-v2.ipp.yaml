@@ -20,7 +20,4 @@ pipelines:
             mpp-eval: gpgkeys
           exclude:
             docs: true
-      - type: org.osbuild.selinux
-        options:
-          file_contexts: etc/selinux/targeted/contexts/files/file_contexts
 
