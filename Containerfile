@@ -9,6 +9,4 @@ RUN rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfr
 #RUN rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfracloud.org:group_asahi:fedora-remix-branding' fedora-asahi-remix-release fedora-asahi-remix-release-common fedora-asahi-remix-release-identity-basic fedora-asahi-remix-release-workstation
 RUN rm -f /var/lib/unbound/root.key # workaround see https://github.com/fedora-silverblue/issue-tracker/issues/413
 RUN ostree container commit
-# error: Performing deployment: Deploying tree: opendir(var): No such file or directory
-RUN touch /var/.dummy
 
