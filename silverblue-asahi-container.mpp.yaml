@@ -57,7 +57,7 @@ pipelines:
       - type: org.osbuild.ostree.deploy.container
         options:
           osname: silverblue-asahi
-          target_imgref: ostree-remote-registry:quay.io/fedora/fedora-silverblue:39
+          target_imgref: ostree-remote-registry:quay.io/ecurtin/silverblue-asahi:39
           mounts:
             - /boot
             - /boot/efi
