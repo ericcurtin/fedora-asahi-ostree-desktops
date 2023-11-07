@@ -10,5 +10,5 @@ RUN rpm-ostree override replace --experimental --from repo='copr:copr.fedorainfr
 RUN rm -f /var/lib/unbound/root.key # workaround see https://github.com/fedora-silverblue/issue-tracker/issues/413
 RUN ostree container commit
 # error: Performing deployment: Deploying tree: opendir(var): No such file or directory
-RUN mkdir /var
+RUN touch /var/.dummy
 
