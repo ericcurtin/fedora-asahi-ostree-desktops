@@ -3,6 +3,7 @@
 set -ex
 
 sudo podman build -t silverblue-asahi:39 .
+# sudo podman login quay.io
 sudo podman push silverblue-asahi quay.io/ecurtin/silverblue-asahi
 sudo podman push silverblue-asahi quay.io/ecurtin/silverblue-asahi:39
 
