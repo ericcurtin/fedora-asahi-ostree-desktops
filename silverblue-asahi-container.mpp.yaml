@@ -75,11 +75,6 @@ pipelines:
               images:
                 - source: registry.gitlab.com/redhat/services/products/image-builder/ci/images/fedora-coreos
                   tag: stable
-      - type: org.osbuild.ostree.selinux
-        options:
-          deployment:
-            osname: silverblue-asahi
-            ref: ostree/1/1/0
       - type: org.osbuild.grub2
         options:
           rootfs:
