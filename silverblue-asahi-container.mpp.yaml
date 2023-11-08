@@ -40,7 +40,7 @@ pipelines:
       - type: org.osbuild.ostree.init-fs
       - type: org.osbuild.ostree.os-init
         options:
-          osname: fedora-coreos
+          osname: silverblue-asahi
       - type: org.osbuild.ostree.config
         options:
           repo: /ostree/repo
